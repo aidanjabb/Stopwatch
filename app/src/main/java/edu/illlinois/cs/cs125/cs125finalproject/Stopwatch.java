@@ -5,9 +5,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class Stopwatch extends AppCompatActivity {
 
@@ -18,11 +20,20 @@ public class Stopwatch extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        final Button Start_Stop = (Button) findViewById(R.id.Start_Stop);
+        Start_Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Log.d(TAG, "Start/Stop button clicked")
+                        .setAction("Action", null).show();
+            }
+        });
+
+        final Button Lap_Reset = (Button) findViewById(R.id.Lap_Reset);
+        Lap_Reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "Lap_Reset button clicked")
                         .setAction("Action", null).show();
             }
         });
