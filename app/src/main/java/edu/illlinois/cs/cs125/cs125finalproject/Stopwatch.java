@@ -1,8 +1,6 @@
 package edu.illlinois.cs.cs125.cs125finalproject;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -13,28 +11,29 @@ import android.widget.Button;
 
 public class Stopwatch extends AppCompatActivity {
 
+    /** Default logging tag for messages from the main activity. */
+    private static final String TAG = "Stopwatch:Main";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final Button Start_Stop = (Button) findViewById(R.id.Start_Stop);
+        final Button Start_Stop = findViewById(R.id.Start_Stop);
         Start_Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "Start/Stop button clicked")
-                        .setAction("Action", null).show();
+                Log.d(TAG, "Start/Stop button clicked");
             }
         });
 
-        final Button Lap_Reset = (Button) findViewById(R.id.Lap_Reset);
-        Lap_Reset.setOnClickListener(new View.OnClickListener() {
+        final Button Reset = findViewById(R.id.Reset);
+        Reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "Lap_Reset button clicked")
-                        .setAction("Action", null).show();
+                Log.d(TAG, "Reset button clicked");
             }
         });
     }

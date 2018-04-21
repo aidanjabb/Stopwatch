@@ -14,18 +14,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/Lap_Reset"
-        android:text="Start" />
+        android:layout_alignTop="@+id/Reset"
+        android:text="Start"
+        android:layout_alignParentRight="true"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/Lap_Reset"
+        android:id="@+id/Reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="176dp"
         android:background="@android:drawable/radiobutton_off_background"
-        android:text="Lap" />
+        android:text="1"
+        android:layout_alignParentLeft="true"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView"
@@ -36,50 +40,9 @@
         android:layout_marginStart="130dp"
         android:layout_marginTop="16dp"
         android:text="00:00:00"
-        android:textAppearance="@android:style/TextAppearance.Material.Large" />
-
-    <TextView
-        android:id="@+id/Lap 1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="248dp"
-        android:layout_marginStart="147dp"
-        android:text="Lap 1" />
-
-    <TextView
-        android:id="@+id/Lap 2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/Lap 1"
-        android:layout_below="@+id/Lap 1"
-        android:layout_marginTop="-248dp"
-        android:text="Lap 2" />
-
-    <TextView
-        android:id="@+id/Lap 3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/Lap 1"
-        android:layout_below="@+id/Lap 2"
-        android:text="Lap 3" />
-
-    <ScrollView
-        android:layout_width="101dp"
-        android:layout_height="150dp"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_centerVertical="true">
-
-    </ScrollView>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="198dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="vertical" />
-
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="130dp"
+        tools:targetApi="lollipop"
+        tools:ignore="HardcodedText" />
 </RelativeLayout>
