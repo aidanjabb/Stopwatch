@@ -14,9 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/Reset"
-        android:text="Start"
         android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/Reset"
+        android:background="@android:drawable/radiobutton_off_background"
+        android:text="Start"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -35,14 +36,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:text="00:00:00"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="130dp"
-        tools:targetApi="lollipop"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        tools:targetApi="lollipop" />
 </RelativeLayout>
