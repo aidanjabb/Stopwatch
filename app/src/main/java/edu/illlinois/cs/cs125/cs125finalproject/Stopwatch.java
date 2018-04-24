@@ -33,6 +33,7 @@ public class Stopwatch extends AppCompatActivity {
                 }
 
             }
+
         });
 
         final Button Reset = findViewById(R.id.Reset);
