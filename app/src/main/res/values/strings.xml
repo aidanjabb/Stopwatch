@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CS 125 Final Project</string>
+    <string name="app_name">Stopwatch</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -90,4 +90,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="aaa">aaa</string>
+    <string name="aaaa">aaaa</string>
+    <string name="lap_1">Lap 1</string>
+    <string name="lap_2">Lap 2</string>
 </resources>

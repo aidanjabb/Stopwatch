@@ -26,6 +26,12 @@ public class Stopwatch extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "Start/Stop button clicked");
+                if (Start_Stop.getText() == "Start") {
+                    Start_Stop.setText("Stop");
+                } else {
+                    Start_Stop.setText("Start");
+                }
+
             }
         });
 
