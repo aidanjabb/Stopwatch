@@ -27,6 +27,7 @@ public class Stopwatch extends AppCompatActivity {
             public void onClick(View view) {
                 Log.d(TAG, "Start/Stop button clicked");
             }
+
         });
 
         final Button Reset = findViewById(R.id.Reset);
