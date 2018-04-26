@@ -9,8 +9,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Stopwatch extends AppCompatActivity {
 
@@ -30,6 +36,10 @@ public class Stopwatch extends AppCompatActivity {
     Button Lap;
     Button Reset;
     TextView showTime;
+    ListView list;
+    String[] stringArray = new String[] {  };
+    List<String> arrayList ;
+    ArrayAdapter<String> adapter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +53,12 @@ public class Stopwatch extends AppCompatActivity {
         Lap = findViewById(R.id.Lap);
         Reset = findViewById(R.id.Reset);
         showTime = findViewById(R.id.textView);
+        list = findViewById(R.id.listview);
+        arrayList = new ArrayList<String>(Arrays.asList(stringArray));
+        adapter = new ArrayAdapter<String>(Stopwatch.this,
+                android.R.layout.simple_list_item_1, arrayList);
+        list.setAdapter(adapter);
+
        Start_Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,11 +68,13 @@ public class Stopwatch extends AppCompatActivity {
                     start = SystemClock.uptimeMillis();
                     handler.postDelayed(runnable, 0);
                     Reset.setEnabled(false);
+                    Lap.setEnabled(true);
                 } else {
                     Start_Stop.setText("Start");
                     timeBuff += miliSecond;
                     handler.removeCallbacks(runnable);
                     Reset.setEnabled(true);
+                    Lap.setEnabled(false);
                 }
             }
 
@@ -66,6 +84,8 @@ public class Stopwatch extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "Lap button clicked");
+                arrayList.add(showTime.getText().toString());
+                adapter.notifyDataSetChanged();
             }
         });
 
@@ -81,6 +101,8 @@ public class Stopwatch extends AppCompatActivity {
                 minutes = 0 ;
                 miliseconds = 0 ;
                 showTime.setText("00:00:000");
+                arrayList.clear();
+                adapter.notifyDataSetChanged();
             }
         });
     }
