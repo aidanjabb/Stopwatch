@@ -21,7 +21,7 @@ public class Stopwatch extends AppCompatActivity {
     long miliSecond;
     long start;
     long timeBuff;
-    long update = 0L;
+    long update;
     int second;
     int minutes;
     int miliseconds;
