@@ -25,8 +25,9 @@ public class Stopwatch extends AppCompatActivity {
     int second;
     int minutes;
     int miliseconds;
-    Handler handler = new Handler();
+    Handler handler;
     Button Start_Stop;
+    Button Lap;
     Button Reset;
     TextView showTime;
 
@@ -37,7 +38,9 @@ public class Stopwatch extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        handler = new Handler();
         Start_Stop = findViewById(R.id.Start_Stop);
+        Lap = findViewById(R.id.Lap);
         Reset = findViewById(R.id.Reset);
         showTime = findViewById(R.id.textView);
        Start_Stop.setOnClickListener(new View.OnClickListener() {
@@ -48,19 +51,36 @@ public class Stopwatch extends AppCompatActivity {
                     Start_Stop.setText("Stop");
                     start = SystemClock.uptimeMillis();
                     handler.postDelayed(runnable, 0);
+                    Reset.setEnabled(false);
                 } else {
                     Start_Stop.setText("Start");
                     timeBuff += miliSecond;
                     handler.removeCallbacks(runnable);
+                    Reset.setEnabled(true);
                 }
             }
 
         });
 
-        Reset.setOnClickListener(new View.OnClickListener() {
+        Lap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d(TAG, "Lap button clicked");
+            }
+        });
+
+        Reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Log.d(TAG, "Reset button clicked");
+                miliSecond = 0L ;
+                start = 0L ;
+                timeBuff = 0L ;
+                update = 0L ;
+                second = 0 ;
+                minutes = 0 ;
+                miliseconds = 0 ;
+                showTime.setText("00:00:000");
             }
         });
     }

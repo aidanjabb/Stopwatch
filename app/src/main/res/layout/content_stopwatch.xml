@@ -13,24 +13,31 @@
         android:id="@+id/Start_Stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/Reset"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="168dp"
         android:background="@android:drawable/radiobutton_off_background"
         android:text="Start"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/Lap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Start_Stop"
+        android:layout_centerHorizontal="true"
+        android:background="@android:drawable/radiobutton_off_background"
+        android:text="Lap"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/Reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="176dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/Start_Stop"
         android:background="@android:drawable/radiobutton_off_background"
-        android:text="Lap"
-        tools:ignore="HardcodedText" />
+        android:text="Reset" />
 
     <TextView
         android:id="@+id/textView"
@@ -39,7 +46,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
-        android:text="00:00:00"
+        android:text="00:00:000"
         android:textAppearance="@android:style/TextAppearance.Material.Display1"
         android:textSize="36sp"
         tools:ignore="HardcodedText"
